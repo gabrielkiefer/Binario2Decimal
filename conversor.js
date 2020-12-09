@@ -23,6 +23,11 @@ function convertBinaryToDecimal(binary){
 
     for(i = 0, j = binaryDigits; i <= binaryDigits, j >= 0; i++, j--){
         //console.log(`${binary.charAt(i)}` + ` * (2^${j})` + "=" + binary.charAt(i) * (2**j));
+        
+        if(binary.charAt(i) != 0 && binary.charAt(i) != 1){
+            return `Voce digitou: "${binary.charAt(i)}", digite apenas 1 e 0`;
+        }
+
         AddOperatorAuxiliar.push(binary.charAt(i) * (2**j));
 
         decimal += AddOperatorAuxiliar[i];
